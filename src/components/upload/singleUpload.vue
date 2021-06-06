@@ -1,7 +1,7 @@
 <template> 
   <div>
     <el-upload
-      action="http://gulimall-images.oss-cn-shanghai.aliyuncs.com"
+      action="http://djl-gulimall.oss-cn-shenzhen.aliyuncs.com"
       :data="dataObj"
       list-type="picture"
       :multiple="false" :show-file-list="showFileList"
@@ -83,7 +83,7 @@
             _self.dataObj.policy = response.data.policy;
             _self.dataObj.signature = response.data.signature;
             _self.dataObj.ossaccessKeyId = response.data.accessid;
-            _self.dataObj.key = response.data.dir + getUUID()+'_${filename}';
+            _self.dataObj.key = response.data.dir + "/" + getUUID() + '_${filename}';
             _self.dataObj.dir = response.data.dir;
             _self.dataObj.host = response.data.host;
             resolve(true)
